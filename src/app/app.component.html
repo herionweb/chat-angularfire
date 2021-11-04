@@ -1,0 +1,17 @@
+<div class="container main-container">
+    <div class="text-center" *ngIf="!this._chatService.usuario.uid">
+        <h1 class="text-center display-1">HerionWeb</h1>
+        <small class="text-muted">Escribe y comparte el LINK <span>
+        <i class="fa fa-angle-left"></i> XD
+      </span></small>
+    </div>
+    <div class="col-md-12 text-end">
+        <button type="button" class="btn btn-outline-dark" (click)="salir()" *ngIf="this._chatService.usuario.uid"><i
+        class="fa fa-angle-left"></i> Salir</button>
+    </div>
+
+    <app-login *ngIf="!this._chatService.usuario.uid"></app-login>
+    <div class="chat-window mt-3" *ngIf="this._chatService.usuario.uid">
+        <app-chat></app-chat>
+    </div>
+</div>

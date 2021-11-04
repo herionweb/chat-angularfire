@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "firechat-e9dd2": {
+      "hosting": {
+        "my-chats-angular": [
+          "firechat-e9dd2"
+        ]
+      }
+    }
+  }
+}

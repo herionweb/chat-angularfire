@@ -1,0 +1,12 @@
+<h1>FireChat</h1>
+<hr>
+
+<div class="app-mensajes" id="app-mensajes">
+
+    <div class="text-end" *ngFor="let chat of _chatService.chats" [ngClass]="{'text-end': _chatService.usuario.uid === chat.uid}">
+        <span class="badge bg-primary" [ngClass]="{'bg-primary': this._chatService.usuario.uid === chat.uid}" [ngClass]="{'bg-success': this._chatService.usuario.uid !== chat.uid}">{{chat.nombre}}</span>
+        <p>{{chat.mensaje}}</p>
+    </div>
+</div>
+
+<input class="form-control" type="text" name="mensaje" id="inputText" [(ngModel)]="mensaje" placeholder="Enviar mensaje" maxlength="250" (keyUp.enter)="enviar_mensaje()">
